@@ -1,5 +1,3 @@
-# Dictionary for the standard genetic code (codon to amino acid single-letter code)
-# Stop codons are marked with '*' but not added to the protein sequence
 genetic_code = {
     "AAA": "K", "AAC": "N", "AAG": "K", "AAU": "N",
     "ACA": "T", "ACC": "T", "ACG": "T", "ACU": "T",
@@ -30,7 +28,7 @@ def translate_mrna(mrna_sequence):
     - If the sequence length is not a multiple of 3, translation stops at the last complete codon.
     - Invalid codons are represented as 'X'.
     """
-    mrna_sequence = mrna_sequence.upper()  # Normalize to uppercase
+    mrna_sequence = mrna_sequence.upper()  
     protein = ""
     i = 0
     while i + 3 <= len(mrna_sequence):
@@ -42,8 +40,8 @@ def translate_mrna(mrna_sequence):
         i += 3
     return protein
 
-# Example usage: Run the program and input an mRNA sequence
 if __name__ == "__main__":
     mrna = input("Enter the mRNA sequence: ").strip()
     protein = translate_mrna(mrna)
     print("Protein sequence:", protein)
+
